@@ -88,16 +88,17 @@ TokenPoolRequest.prototype.authenticatedRequest = function(options, type, resour
 	console.log("tokensFound");
 
 	for(var i in tokenInfo){
-		if(tokenInfo[i].remaining != 0 ){
+		resets.push(tokenInfo[i].reset);
+		if(tokenInfo[i].remaining != 0 && tokenToApply == null){
 			tokenToApply = i;
 			tokenInfo[i].remaining--;
-			break;
+			//break;
 		}
 	}
 
-	for(var i in tokenInfo){
-		resets.push(tokenInfo[i].reset);
-	}
+	// for(var i in tokenInfo){
+	// 	resets.push(tokenInfo[i].reset);
+	// }
 
 	console.log(resets);
 
