@@ -49,7 +49,7 @@ var options = {
 
 var interceptor = interceptorModule(tokenConfig);
 Q.fcall(interceptor.authenticatedRequest(options, 'FOK'))
-  .then(console.log); //Log the response as an example. FOK assigns on token from the pool and returns the response 
+  .then(console.log); //Log the response as an example. FOK assigns a token from the pool and returns the response 
 
 ```
 
