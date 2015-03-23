@@ -1,0 +1,32 @@
+{
+  "name": "PooledTokenInterceptor",
+  "version": "0.1.0",
+  "description": "A NodeJS module that uses a pool of tokens to make authenticated requests to APIs and extend their limits.",
+  "main": "index.js",
+  "dependencies": {
+    "q": "^1.2.0",
+    "request": "^2.53.0",
+    "valid-url": "^1.0.9"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rohaanhamid/PooledTokenInterceptor.git"
+  },
+  "keywords": [
+    "request",
+    "token",
+    "pool",
+    "api",
+    "limit"
+  ],
+  "author": "Rohaan Hamid <rohaanhamid@hotmail.com> (github.com/rohaanhamid)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rohaanhamid/PooledTokenInterceptor/issues"
+  },
+  "homepage": "https://github.com/rohaanhamid/PooledTokenInterceptor"
+}
