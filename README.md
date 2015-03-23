@@ -32,7 +32,8 @@ var tokenConfig = {
 	tokenIdentifier : 'Token', // Sets up the identifier for the token in the header (e.g "Token 32903209499324") or query param "&access_token=99348384838834834".
 	tokens : ['token1', 'token2'], // As many as you like.
 	failureResponseCode : 403, // Default to 403. This is used by the module to check if the request failed. Check what the API being used with sends back when rate limit is exhausted.
-	headerLimitResetVar	: 'x-ratelimit-reset' // Key name in the response header for the variable that holds the time for the limit to be reset. It is x-ratelimit-reset for Github.
+	headerLimitResetVar : 'x-ratelimit-reset', // Key name in the response header for the variable that holds the time for the limit to be reset. It is x-ratelimit-reset for Github.
+	resetOffset : 4, // Number of extra seconds to wait before making another call after the time for reset has passed.
 };
 ```
 
