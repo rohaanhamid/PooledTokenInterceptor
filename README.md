@@ -66,7 +66,7 @@ for(var i = 0; i < 45; i++){
 	promisesArray.push(request.authenticatedRequest(options, 'WTC'));
 }
 
-// Wait for the promised to resolve and print out the statusCode for each of them
+// Wait for the promises to resolve and print out the statusCode for each of them
 Q.all(promisesArray).then(function(responses){
 	console.log("Number of responses: " + responses.length);
 	for(var i = 0; i < responses.length; i++){
@@ -76,5 +76,5 @@ Q.all(promisesArray).then(function(responses){
 
 ```
 
-The above example will make 45 requests to the github api. If one token is supplied only 30 requests can ideally be made till the limit is exceeded. With the 'WTC' option, the module will collect the 15 failed responses, wait for the limits to be reset and retry the requests for each of them. Promises are only resolved when all the requests have been successfully completed. 
+The above example will make 45 requests to the GitHub api. If one token is supplied only 30 requests can ideally be made till the limit is exceeded. With the 'WTC' option, the module will collect the 15 failed responses, wait for the limits to be reset and retry the requests for each of them. Promises are only resolved when all the requests have been successfully completed. 
 
