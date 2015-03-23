@@ -1,6 +1,6 @@
 # About the module
 
-*pooledtokeninterceptor* is a NodeJS module that uses a pool of tokens to access API endpoints thereby increasing the number of requests that can be made at a given time. The module works by assigning access tokens to each request in a round robin pattern and returns a promise. The module then checks the response and resolves the promise based on the type of call made.
+*pooledtokeninterceptor* is a NodeJS module that uses a pool of tokens to access API endpoints thereby increasing the number of requests that can be made at a given time from the imposed limits. The module works by assigning access tokens to each request in a round robin pattern and returns a promise. The module then checks the response and resolves the promise based on the type of call made.
 
 The following types of calls are allowed:
 
