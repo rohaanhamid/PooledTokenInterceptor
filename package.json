@@ -1,6 +1,6 @@
 {
-  "name": "PooledTokenInterceptor",
-  "version": "0.1.0",
+  "name": "pooledtokeninterceptor",
+  "version": "0.1.2",
   "description": "A NodeJS module that uses a pool of tokens to make authenticated requests to APIs and extend their limits.",
   "main": "index.js",
   "dependencies": {
