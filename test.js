@@ -11,7 +11,7 @@ var options = {
 var tokenConfig = {
 	tokenLocation : 'header', //or 'query' 
 	tokenIdentifier : 'Token', // or whatever the API requires.
-	tokens : [INSERT TOKENS HERE],
+	tokens : ['9a2b71d92c9053e913030f0b2bd92e83fcd439f5'],
 	failureResponseCode : 403, // Default to 403. This is used by the module to check if the request failed. Check what the API being used with send back.
 	headerLimitResetVar	: 'x-ratelimit-reset' // Paramter name in the response header that holds then time when the limit will be reset
 };
@@ -21,8 +21,8 @@ var request = new PooledTokenInterceptor(tokenConfig);
 var promisesArray = [];
 
 // Collect promised for each of the requests to the API
-for(var i = 0; i < 45; i++){
-	promisesArray.push(request.authenticatedRequest(options, ''));
+for(var i = 0; i < 35; i++){
+	promisesArray.push(request.authenticatedRequest(options, 'FOK'));
 }
 
 // Wait for the promised to resolve and print out the statusCode for each of them

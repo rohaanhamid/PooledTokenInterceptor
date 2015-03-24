@@ -65,18 +65,13 @@ TokenPoolRequest.prototype.makeRequest = function(options, deferred, type){
      		var limitReset = response.headers[self.tokenPoolConfig['headerLimitResetVar']];
 			var currEpoch = Math.floor((new Date).getTime()/1000);
 			var waitPeriod = limitReset - currEpoch + self.tokenPoolConfig.resetOffset;
-			if(response.statusCode == self.tokenPoolConfig.failureResponseCode){
-				// Wait till all the requests are successful or just return whatever
-				// comes back
-				if(type == 'WTC'){
+			if(response.statusCode == self.tokenPoolConfig.failureResponseCode
+				&& type == 'WTC'){
 					console.log("Blocked for " + waitPeriod + " seconds");
 					Q.delay(waitPeriod * 1000)
 					 .then(function(){
 					 	self.makeRequest(options, deferred, type)
 					 });
-				}else{
-					deferred.resolve(response);
-				}
 			}else{
 				deferred.resolve(response);
 			}

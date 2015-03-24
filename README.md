@@ -1,12 +1,10 @@
 # About the module
 
-*pooledtokeninterceptor* is a NodeJS module that uses a pool of tokens to access API endpoints thereby increasing the number of requests that can be made at a given time from the imposed limits. The module works by assigning access tokens to each request in a round robin pattern and returns a promise. The module then checks the response and resolves the promise based on the type of call made.
-
-The following types of calls are allowed:
+*pooledtokeninterceptor* is a NodeJS module that uses a pool of tokens to access API endpoints thereby increasing the number of requests that can be made at a given time despite the imposed limits. The module works by assigning access tokens to request in a round robin pattern and returns a promise from each of them. The module then checks the response and resolves the promise based on the following types of calls:
 
 1) 'WTC' or Wait to Complete - This type of call checks the response code to determine if the limit has been exceeded. It then waits for the rate limit to be reset, makes another requests and resolves the promise on success.
 
-2) 'FOK' or Fill or Kill - This type of call simply distributes tokens from the supplied pool to requests to maximize the number of successful requests that can be made. All failed responses are returned as it is. 
+2) 'FOK' or Fill or Kill - This type of call simply distributes tokens from the supplied pool to requests in order to maximize the number of successful requests that can be made. All failed responses are returned as it is. 
 
 # How to use
 
@@ -77,5 +75,4 @@ Q.all(promisesArray).then(function(responses){
 
 ```
 
-The above example will make 45 requests to the GitHub api. If one token is supplied only 30 requests can ideally be made till the limit is exceeded. With the 'WTC' option, the module will collect the 15 failed responses, wait for the limits to be reset and retry the requests for each of them. Promises are only resolved when all the requests have been successfully completed. 
-
+The above example will make 45 requests to the GitHub api. If one token is supplied, only 30 requests can ideally be made based on the imposed limits. With the 'WTC' option, the module will collect the 15 failed responses, wait for the limits to be reset and retry the requests for each of them. Promises are only resolved when all the requests have been successfully completed. 
